@@ -1,19 +1,30 @@
 #!/usr/bin/env python3
 import random
 
-
+"""Seives Algo to find prime numbers within n . More Time Efficient. """
 def get_primes(n):
-    """Get all primes less than or equal to n."""
-    if n < 2:
-        return []
-    primes = [2]
-    for i in range(3, n+1):
-        for p in primes:
-            if i % p == 0:
-                break
-            if p > int(i ** 0.5):
-                primes.append(i)
-                break
+
+    primes = []
+    
+    if(n<2):
+        return primes;
+
+
+    prime = [True for i in range(n+1)]
+ 
+    i = 2
+    while (i * i <= n):
+		
+        if (prime[i] == True):
+			
+            for j in range(i * 2, n+1, i):
+            	prime[j] = False
+        i += 1
+	
+    for i in range(2, n):
+        if prime[i]:
+            primes.append(i)
+    
     return primes
 
 
