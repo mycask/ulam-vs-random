@@ -3,8 +3,6 @@ import random
 
 """Seives Algo to find prime numbers within n . More Time Efficient. """
 def get_primes(n):
-    """Get all primes less than or equal to n."""
-    def get_primes(n):
 
     primes = []
     
